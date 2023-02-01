@@ -1,0 +1,13 @@
+name = "Astrodynamics"
+uuid = "3247b8c5-b971-43fd-8426-1930083d9f17"
+authors = ["Alicia Sanjurjo <100428537@alumnos.uc3m.es>"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
