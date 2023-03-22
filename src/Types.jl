@@ -2,7 +2,8 @@ module Types
 
 using LinearAlgebra
 
-export VectorBasis, CanonicalVectorBasis, CylindricalVectorBasis, SphericalVectorBasis, IntrinsicVectorBasis, VectorWithBasis
+export VectorBasis, CanonicalVectorBasis, CylindricalVectorBasis, SphericalVectorBasis, IntrinsicVectorBasis, VectorWithBasis, Point, ReferenceFrame, Particle
+Particle
 
 # Vector Basis Type defined by 3 orthonormal vectors in a 3x3 matrix, 1 angular velocity vector and 1 angular acceleration vector
 mutable struct VectorBasis
@@ -133,4 +134,19 @@ end
 ##############################################################################################################
 
 
+# Particle Type defined by a Point and a mass
+mutable struct Particle 
+    point::Point
+    mass::Real
 end
+
+# Define a constructor that takes in a Point and a mass
+function ParticleConstructor(point::Point, mass::Real)
+    return Particle(point, mass)
+end
+
+# Define a default constructor that initializes the point to the origin point of the inertial reference frame and the mass to zero
+Particle() = Particle(Point(), 0.0) # massless particle
+
+
+end # module
