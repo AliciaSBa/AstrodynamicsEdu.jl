@@ -30,6 +30,8 @@ jobs:
       - name: Install Dependencies
         run: |
           julia -e 'import Pkg; Pkg.add(["Unitful", "LinearAlgebra","Test"])'
+      - name: Install GitHubActions package
+        run: julia -e 'import Pkg; Pkg.add("GitHubActions")'
       - uses: julia-actions/setup-julia@v1
         with:
           version: ${{ matrix.version }}
