@@ -8,6 +8,6 @@ using Unitful
 
 # INCLUDES
 
-include("Types.jl")
+include("LinearAlgebraTypes.jl")
 
 end
