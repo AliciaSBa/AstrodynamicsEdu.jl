@@ -17,7 +17,7 @@ jobs:
         uses: julia-actions/setup-julia@v1
         with:
           version: 1.6
-      - run: julia ] registry add https://github.com/JuliaRegistries/GitHubActions.jl; instantiate
+      - run: julia registry add https://github.com/JuliaRegistries/GitHubActions.jl; instantiate
       - name: Install dependencies
         run: julia --project=@. -e 'using Pkg; Pkg.instantiate()'
 
