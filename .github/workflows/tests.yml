@@ -38,6 +38,8 @@ jobs:
         - uses: julia-actions/julia-buildpkg@v1
         - name: Install GitHubActions package
           run: julia -e 'import Pkg; Pkg.add("GitHubActions")'
+        - name: Install Dependencies
+          run: julia -e 'import Pkg; Pkg.add(["Unitful", "LinearAlgebra","Test"])'
         - uses: julia-actions/julia-runtest@v1
           with:
             annotate: true
