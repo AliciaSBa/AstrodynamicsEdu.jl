@@ -36,6 +36,8 @@ jobs:
             version: ${{ matrix.julia-version }}
             arch: ${{ matrix.julia-arch }}
         - uses: julia-actions/julia-buildpkg@v1
+        - name: Install GitHubActions package
+          run: julia -e 'import Pkg; Pkg.add("GitHubActions")'
         - uses: julia-actions/julia-runtest@v1
           with:
             annotate: true
