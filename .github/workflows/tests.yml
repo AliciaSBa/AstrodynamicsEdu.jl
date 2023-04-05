@@ -30,11 +30,19 @@ jobs:
       # Steps represent a sequence of tasks that will be executed as part of the job
       steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v2          # maybe edit to v3
-        - uses: julia-actions/setup-julia@v1
+        - name: Checkout repo
+          uses: actions/checkout@v2          # maybe edit to v3
+        - name: Setup Julia
+          uses: julia-actions/setup-julia@v1
           with:
             version: ${{ matrix.julia-version }}
             arch: ${{ matrix.julia-arch }}
+        - name: Install Dependencies
+          run: julia -e 'import Pkg; Pkg.instantiate()'
+        - name: Update Packages
+          run: julia -e 'import Pkg; Pkg.update()'
+        - name: Test
+          run: julia --project=@. -e 'import Pkg; Pkg.test("Astrodynamics")'
         - uses: julia-actions/julia-buildpkg@v1
         - name: Install GitHubActions package
           run: julia -e 'import Pkg; Pkg.add("GitHubActions")'
