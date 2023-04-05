@@ -27,15 +27,21 @@ jobs:
           - x64
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: ${{ matrix.version }}
+          arch: ${{ matrix.arch }}
       - name: Install Dependencies
         run: |
-          julia -e 'import Pkg; Pkg.add(["Unitful", "LinearAlgebra","Test"])'
-      - name: Install GitHubActions package
-        run: julia -e 'import Pkg; Pkg.add("GitHubActions")'
+          julia -e 'import Pkg; Pkg.add(["Unitful", "LinearAlgebra","Test", "GitHubActions"])'
+          julia -e 'import Pkg; Pkg.update()'
       - uses: julia-actions/setup-julia@v1
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
       - uses: julia-actions/cache@v1
       - uses: julia-actions/julia-buildpkg@v1
-      - uses: julia-actions/julia-runtest@v1
+      - name: Run Tests
+        run: julia --project=@. -e 'import Pkg; Pkg.test("Astrodynamics")'
+        # uses: julia-actions/julia-runtest@v1
