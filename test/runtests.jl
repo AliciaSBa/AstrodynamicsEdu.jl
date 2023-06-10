@@ -10,5 +10,6 @@ using Astrodynamics
     # Write your tests here.
     @time @testset "Astrodynamics.LinearAlgebraTypes" begin
         include(joinpath(testdir, "test_LinearAlgebraTypes.jl"))
+        include(joinpath(testdir, "test_IdealTwoBodyProblem.jl"))
     end
 end
