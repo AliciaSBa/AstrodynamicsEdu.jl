@@ -1,4 +1,9 @@
 module AstrodynamicsEdu
+<<<<<<< HEAD:src/AstrodynamicsEdu.jl
+=======
+
+# Write your package code here.
+>>>>>>> 91dd36c47f00d3b2ed0be680664802d39b10fa9e:src/Astrodynamics.jl
 
 # USINGS
 using LinearAlgebra
