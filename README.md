@@ -35,6 +35,9 @@ There are multiple Astrodynamics libraries available for Julia; however, none of
 ### Built With
 Here are listed the major libraries that have been used to bootstrap this project.
 * LinearAlegbra.jl
+* Plots.jl
+* Roots.jl
+* DifferentialEquations.jl
 * and more
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
