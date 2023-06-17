@@ -1,13 +1,11 @@
-module Astrodynamics
+module AstrodynamicsEdu
 
-# Write your package code here.
-
+# USINGS
 using LinearAlgebra
 using Plots
 using Unitful
 
 # INCLUDES
-
 include("LinearAlgebraTypes.jl")
 include("IdealTwoBodyProblem.jl")
 include("OrbitalPlots.jl")

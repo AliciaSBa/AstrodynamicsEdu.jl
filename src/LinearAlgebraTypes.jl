@@ -288,10 +288,10 @@ end
 
 struct MyParticle
     point::MyPoint
-    mass
+    mass::Number
 
     # Define a constructor that takes in a MyPoint objects and the mass and returns a MyParticle object
-    function MyParticle(point::MyPoint,mass)
+    function MyParticle(point::MyPoint,mass::Number)
         #Input 
             # point is a MyPoint object that represents the position, velocity, and acceleration of the particle
             # mass is the mass of the particle
@@ -393,7 +393,7 @@ end
     j = b.j.c0
     k = b.k.c0
 
-    p = plot3d(xlim=(-1, 1), ylim=(-1, 1), zlim=(-1, 1), aspect_ratio=:equal)
+    p = plot3d!(xlim=(-1, 1), ylim=(-1, 1), zlim=(-1, 1), aspect_ratio=:equal)
     plot!(p, [0, i[1]], [0, i[2]], [0, i[3]], arrow=true, label="i", linecolor=:red, arrowcolor=:red)
     plot!(p, [0, j[1]], [0, j[2]], [0, j[3]], arrow=true, label="j", linecolor=:green, arrowcolor=:green)
     plot!(p, [0, k[1]], [0, k[2]], [0, k[3]], arrow=true, label="k", linecolor=:blue, arrowcolor=:blue)
@@ -503,7 +503,6 @@ function pure_rotation_MyBasis_z(basis::MyBasis,theta::Number)
     # Construct the MyBasis object and return it
     return MyBasis(MyVector(i),MyVector(j),MyVector(k),basis.omega,basis.alpha)
 end
-
 
 
 end # module

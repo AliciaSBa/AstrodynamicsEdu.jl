@@ -1,4 +1,4 @@
-name = "Astrodynamics"
+name = "AstrodynamicsEdu"
 uuid = "3247b8c5-b971-43fd-8426-1930083d9f17"
 authors = ["Alicia Sanjurjo <100428537@alumnos.uc3m.es>"]
 version = "0.1.0"
@@ -13,6 +13,9 @@ Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Roots = "f2b01f46-fcfa-551c-844a-d8ac1e96c665"
+DifferentialEquations = "0c46a032-eb83-5123-abaf-570d42b7fbaa"
 GitHubActions = "10745b16-79ce-11eb-2f9c-d37ab8c8ae1d"
 
 [targets]

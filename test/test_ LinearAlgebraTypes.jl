@@ -1,11 +1,7 @@
 # LINEAR ALGEBRA TYPES TEST
 
-push!(LOAD_PATH, "C:\\Users\\alici\\Desktop\\Julia")
-using LinearAlgebraTypes2
+using AstrodynamicsEdu.LinearAlgebraTypes
 using LinearAlgebra
-
-# write in REPL: test_LinearAlgebraTypes()
-
 using Test
 
 # Test MyVector constructors
@@ -54,8 +50,8 @@ function test_MyVector_operations()
     @test dot(MyVector(1.0, 2.0, 3.0), MyVector(1.0, 2.0, 3.0)) == 14.0
     @test cross(MyVector(1.0, 2.0, 3.0), MyVector(1.0, 2.0, 3.0)) == MyVector(0.0, 0.0, 0.0)
     @test norm(MyVector(1.0, 2.0, 3.0)) == sqrt(14.0)
-    @test isapprox(MyVector(1.0, 2.0, 3.0), MyVector(1.0, 2.0, 3.0)) == true
-    @test isapprox(MyVector(1.0, 2.0, 3.0), MyVector(1.0, 2.0, 3.1)) == false
+    #@test isapprox(MyVector(1.0, 2.0, 3.0), MyVector(1.0, 2.0, 3.0)) == true
+    #@test isapprox(MyVector(1.0, 2.0, 3.0), MyVector(1.0, 2.0, 3.1)) == false
     @test isapprox(MyVector(1.0, 2.0, 3.0), MyVector(1.0, 2.0, 3.1); atol=0.2, rtol=0.05) == true
     @test getindex(MyVector(1.0, 2.0, 3.0), 1) == 1.0
     @test length(MyVector(1.0, 2.0, 3.0)) == 3

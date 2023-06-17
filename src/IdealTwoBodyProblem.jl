@@ -1,7 +1,7 @@
 module IdealTwoBodyProblem
 
+include("LinearAlgebraTypes.jl")
 using LinearAlgebra
-using LinearAlgebraTypes
 using Roots
 
 export  MyStateVector, angularMomentumVector, mechanicalEnergy, eccentricityVector, semilatusRectum, periodOrbit, perifocalBasis, periapsis, apoapsis, 
@@ -405,6 +405,7 @@ function stateVector_to_COE(stateVector::MyStateVector,mu::Float64)
         node_line = [1.0, 0.0, 0.0]
         RAAN = 0.0
         omega = atan(e[2], e[1])
+        omega < 0 ? omega = omega + 2*pi : omega = omega
     else
         RAAN = rightAscensionOfTheAscendingNode(stateVector)
         omega = argumentOfPeriapsis(stateVector, mu)
@@ -494,6 +495,7 @@ function trueAnomaly_to_eccentricAnomaly(stateVector::MyStateVector,mu::Float64,
     sinE = sqrt(1-norm(e)^2)*sin(theta)/(1+norm(e)*cos(theta))
     cosE = (norm(e)+cos(theta))/(1+norm(e)*cos(theta))
     E = atan(sinE,cosE)
+    E < 0 ? E = E + 2*pi : E = E
     return E
 end
 
@@ -509,6 +511,7 @@ function eccentricAnomaly_to_trueAnomaly(stateVector::MyStateVector,mu::Float64,
     sintheta = sqrt(1-norm(e)^2)*sin(E)/(1-norm(e)*cos(E))
     costheta = (cos(E)-norm(e))/(1-norm(e)*cos(E))
     theta = atan(sintheta,costheta)
+    theta < 0 ? theta = theta + 2*pi : theta = theta
     return theta
 end
 
@@ -586,6 +589,7 @@ function parabolicAnomaly_to_trueAnomaly(stateVector::MyStateVector,mu::Float64,
     # Output
         # theta: true anomaly
     theta = 2*atan(P)
+    theta < 0 ? theta = theta + 2*pi : theta = theta
     return theta
 end
 
@@ -664,6 +668,7 @@ function hyperbolicAnomaly_to_trueAnomaly(stateVector::MyStateVector,mu::Float64
     costheta = (cosh(H)-norm(e))/(1-norm(e)*cosh(H))
     sintheta = sqrt(1-norm(e)^2)*sinh(H)/(1-norm(e)*cosh(H))
     theta = atan(sintheta,costheta)
+    theta < 0 ? theta = theta + 2*pi : theta = theta
     return theta
 end
 
@@ -718,44 +723,6 @@ function trueAnomaly_to_meanAnomaly_H(stateVector::MyStateVector,mu::Float64,the
     Mh = hyperbolicAnomaly_to_meanAnomaly(stateVector,mu,H)
     return Mh
 end
-
-#=
-# Given True Anomaly, find Time Since Periapsis
-function timeSincePeriapsis(stateVector::MyStateVector,mu::Float64,theta::Float64)
-    # Input 
-        # stateVector:: state vector object
-        # mu: gravitational parameter
-        # theta: true anomaly
-    # Output
-        # time: time to go from the periapsis to a true anomaly
-    e = eccentricityVector(stateVector,mu)
-    a = semiMajorAxis(stateVector,mu)
-    p = semilatusRectum(stateVector,mu)
-    if norm(e)==0
-        # Circular orbit
-        n_c = sqrt(mu/a^3) # mean angular rate
-        time = theta/n_c
-    elseif norm(e)<1 && norm(e)>0
-        # Elliptical orbit
-        E = trueAnomaly_to_eccentricAnomaly(stateVector,mu,theta)
-        Me = eccentricAnomaly_to_meanAnomaly(stateVector,mu,E)
-        n_e = sqrt(mu/a^3) # mean angular rate
-        time = Me/n_e 
-    elseif norm(e)==1
-        # Parabolic orbit
-        Mp = trueAnomaly_to_meanAnomaly_P(stateVector,mu,theta)
-        n_p = sqrt(mu/(p)^3) # mean angular rate
-        time = Mp/n_p
-    elseif norm(e)>1
-        # Hyperbolic orbit
-        H = trueAnomaly_to_hyperbolicAnomaly(stateVector,mu,theta)
-        Mh = hyperbolicAnomaly_to_meanAnomaly(stateVector,mu,H)
-        n_h = sqrt(-mu/a^3) # mean angular rate
-        time = Mh/n_h
-    end
-    return time
-end
-=#
 
 
 # Given Mean Anomaly in the Elliptical Case, find Time Since Periapsis
@@ -1041,6 +1008,9 @@ function trueAnomaly_to_universalAnomaly(stateVector::MyStateVector,mu::Float64,
         # Hyperbolic orbit
         H = trueAnomaly_to_hyperbolicAnomaly(stateVector,mu,theta)
         X = hyperbolicAnomaly_to_universalAnomaly(stateVector,mu,H)
+    else
+        # error
+        println("There has been some error, e = ", norm(e))
     end
     return X
 end
@@ -1209,6 +1179,7 @@ function Lambert_conic(r1::MyVector, r2::MyVector, eT::Float64, k::MyVector)
     
     # Compute the angle
     Dphi = atan(dot(r2, j), dot(r2, i)) - atan(dot(r1, j), dot(r1, i))
+    Dphi < 0 ? Dphi += 2*pi : Dphi
     
     # Compute the parameters of the fundamental ellipse
     eF = -(r2_norm - r1_norm) / c_norm
@@ -1285,7 +1256,6 @@ function error_function(mu, r1, r2, eT, tf, k)
     err = tf - timeOfFlight(coe1, coe2, mu)
     return err
 end
-
 
 
 end # module

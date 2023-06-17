@@ -1,9 +1,8 @@
 # IDEAL TWO BODY PROBLEM TESTS
 
-push!(LOAD_PATH, "C:\\Users\\alici\\Desktop\\Julia")
 using LinearAlgebra
-using LinearAlgebraTypes2
-using IdealTwoBodyProblem
+using AstrodynamicsEdu.LinearAlgebraTypes
+using AStrodynamicsEdu.IdealTwoBodyProblem
 using Test
 
 # Test MyStateVector constructor
@@ -248,11 +247,6 @@ function test_KeplerElliptic()
 
 end
 
-# Homework 3. Problem 3. Kepler’s Equation. (HYPERBOLIC ORBIT)
-function test_KeplerHyperbolic()
-    
-end
-
 
 
 # Run the tests
@@ -264,10 +258,4 @@ end
     test_COE2StateVector()
     test_KeplerElliptic()
 end
-
-
-
-
-
-
 

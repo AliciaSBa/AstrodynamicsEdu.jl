@@ -1,11 +1,11 @@
 module OrbitalManeuvers
 
+include("LinearAlgebraTypes.jl")
+include("IdealTwoBodyProblem.jl")
 using LinearAlgebra
-using LinearAlgebraTypes
-using IdealTwoBodyProblem
 
-export HohmannTransfer_circular, HohmannTransfer_elliptic, planeChange_circular, planeChange_apoapsis2apoapsis, LowThrust_orbitRaising_circular, LowThrust_planeChange_circular, HohmannTransfer_tof
-
+export HohmannTransfer_circular, HohmannTransfer_elliptic, planeChange_circular, planeChange_apoapsis2apoapsis, 
+        LowThrust_orbitRaising_circular, LowThrust_planeChange_circular, HohmannTransfer_tof
 
 # Calculate the delta-v required to change the orbit of a spacecraft between two circular and coplanar orbits (Hohmann transfer)
 function HohmannTransfer_circular(r1::Float64, r2::Float64, mu::Float64)
@@ -61,7 +61,7 @@ function HohmannTransfer_elliptic(rp1::Float64, e1::Float64, rp2::Float64, e2::F
         # Calculate the delta-v required
     if rp1 < rp2
         # Calculate the semi-major axis of the transfer orbit
-        ra2 = rp2*(1-e2)/(1 + e2)
+        ra2 = a2*(1 + e2)
         at = (ra2 + rp1)/2
         # Calculate the delta-v1 at the first firing (at pericenter)
         v1 = speed_visViva(rp1, a1, mu)
@@ -71,7 +71,7 @@ function HohmannTransfer_elliptic(rp1::Float64, e1::Float64, rp2::Float64, e2::F
         vta = speed_visViva(ra2, at, mu)
         v2 = speed_visViva(ra2, a2, mu)
         deltaV2 = v2 - vta
-    elseif rp1 > rp2
+    elseif rp1 >= rp2
         # Calculate the semi-major axis of the transfer orbit
         ra1 = rp1*(1-e1)/(1 + e1)
         at = (ra1 + rp2)/2
@@ -83,9 +83,9 @@ function HohmannTransfer_elliptic(rp1::Float64, e1::Float64, rp2::Float64, e2::F
         vtp = speed_visViva(rp2, at, mu)
         v2 = speed_visViva(rp2, a2, mu)
         deltaV2 = vtp - v2
-    else
-        deltaV1 = 0.0
-        deltaV2 = 0.0
+    #else
+        #deltaV1 = 0.0
+        #deltaV2 = 0.0
     end
     deltaV = deltaV1 + deltaV2
     return deltaV
@@ -123,7 +123,7 @@ function planeChange_apoapsis2apoapsis(coe1::MyCOE,coe2::MyCOE,mu::Float64)
     return deltaV
 end
 
-# Calcaulte the delta-v required to change the inclination between two circular orbits with equal radius (Plane Change Maneuver)
+# Calculate the delta-v required to change the inclination between two circular orbits with equal radius (Plane Change Maneuver)
 function planeChange_circular(ra::Float64, delta_i::Float64, mu::Float64)
     # Input: 
         # ra: radius of the circular orbits
