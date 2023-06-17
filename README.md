@@ -57,7 +57,7 @@ To use this library, first you will need to have:
 This package can be installed using:
   ```sh
   julia> Pkg.update()
-  julia> Pkg.add("Astrodynamics")
+  julia> Pkg.add("AstrodynamicsEdu")
   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -69,7 +69,7 @@ Some quick examples can be seen below!
   ```sh
  # Installation
  import Pkg
- Pkg.add("Astrodynamics") # or julia> ]install Astrodynamics
+ Pkg.add("AstrodynamicsEdu") # or julia> ]install Astrodynamics
  
   # Loading
   using Astrodynamics
