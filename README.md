@@ -72,7 +72,7 @@ Some quick examples can be seen below!
  Pkg.add("AstrodynamicsEdu") # or julia> ]install Astrodynamics
  
   # Loading
-  using Astrodynamics
+  using AstrodynamicsEdu
   
   # Solve the I2BP 
   ```
