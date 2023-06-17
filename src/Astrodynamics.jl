@@ -1,4 +1,4 @@
-module Astrodynamics
+module AstrodynamicsEdu
 
 # Write your package code here.
 
