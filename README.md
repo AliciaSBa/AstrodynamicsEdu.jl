@@ -1,4 +1,4 @@
-# Astrodynamics
+# AstrodynamicsEdu
 _Astrodynamics calculations and orbits visualization to solve Orbital Dynamics problems._
 
 [![Build Status](https://github.com/AliciaSBa/Astrodynamics.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/AliciaSBa/Astrodynamics.jl/actions/workflows/CI.yml?query=branch%3Amain)
