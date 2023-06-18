@@ -1,8 +1,11 @@
 module OrbitalPerturbations
 
-include("LinearAlgebraTypes.jl")
-include("IdealTwoBodyProblem.jl")
-include("AstroConstants.jl")
+#include("LinearAlgebraTypes.jl")
+#include("IdealTwoBodyProblem.jl")
+#include("AstroConstants.jl")
+using AstrodynamicsEdu.LinearAlgebraTypes
+using AstrodynamicsEdu.IdealTwoBodyProblem
+using AstrodynamicsEdu.AstroConstants
 using LinearAlgebra
 using DifferentialEquations
 #using OrdinaryDiffEq

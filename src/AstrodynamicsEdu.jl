@@ -1,21 +1,32 @@
 module AstrodynamicsEdu
-<<<<<<< HEAD:src/AstrodynamicsEdu.jl
-=======
-
-# Write your package code here.
->>>>>>> 91dd36c47f00d3b2ed0be680664802d39b10fa9e:src/Astrodynamics.jl
 
 # USINGS
 using LinearAlgebra
 using Plots
 using Unitful
+using DifferentialEquations
+using Roots
+using Reexport
+using DelimitedFiles
+using RemoteFiles
 
-# INCLUDES
-include("LinearAlgebraTypes.jl")
-include("IdealTwoBodyProblem.jl")
-include("OrbitalPlots.jl")
-include("AstroConstants.jl")
-include("OrbitalPerturbations.jl")
-include("OrbitalManeuvers.jl")
+# INCLUDE SUBMODULES
+include("submodules/LinearAlgebraTypes.jl")
+@reexport using .LinearAlgebraTypes
+
+include("submodules/IdealTwoBodyProblem.jl")
+@reexport using .IdealTwoBodyProblem
+
+include("submodules/OrbitalPlots.jl")
+@reexport using .OrbitalPlots
+
+include("submodules/AstroConstants.jl")
+@reexport using .AstroConstants
+
+#include("submodules/OrbitalPerturbations.jl")
+#@reexport using .OrbitalPerturbations
+
+include("submodules/OrbitalManeuvers.jl")
+@reexport using .OrbitalManeuvers
 
 end

@@ -1,6 +1,8 @@
 module IdealTwoBodyProblem
 
-include("LinearAlgebraTypes.jl")
+
+#include("LinearAlgebraTypes.jl")
+using AstrodynamicsEdu.LinearAlgebraTypes
 using LinearAlgebra
 using Roots
 

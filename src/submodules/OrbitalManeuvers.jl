@@ -1,7 +1,9 @@
 module OrbitalManeuvers
 
-include("LinearAlgebraTypes.jl")
-include("IdealTwoBodyProblem.jl")
+#include("LinearAlgebraTypes.jl")
+#include("IdealTwoBodyProblem.jl")
+using AstrodynamicsEdu.LinearAlgebraTypes
+using AstrodynamicsEdu.IdealTwoBodyProblem
 using LinearAlgebra
 
 export HohmannTransfer_circular, HohmannTransfer_elliptic, planeChange_circular, planeChange_apoapsis2apoapsis, 

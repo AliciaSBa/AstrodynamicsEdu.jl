@@ -1,8 +1,11 @@
 module OrbitalPlots
 
-include("LinearAlgebraTypes.jl")
-include("IdealTwoBodyProblem.jl")
-include("AstroConstants.jl")
+#include("LinearAlgebraTypes.jl")
+#include("IdealTwoBodyProblem.jl")
+#include("AstroConstants.jl")
+using AstrodynamicsEdu.LinearAlgebraTypes
+using AstrodynamicsEdu.IdealTwoBodyProblem
+using AstrodynamicsEdu.AstroConstantss
 using LinearAlgebra
 using Plots
 #using DifferentialEquations
