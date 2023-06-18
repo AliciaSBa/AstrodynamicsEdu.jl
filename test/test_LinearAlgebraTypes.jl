@@ -1,6 +1,6 @@
 # LINEAR ALGEBRA TYPES TEST
 
-using AstrodynamicsEdu.LinearAlgebraTypes
+include("linearAlgebraTypes.jl")
 using LinearAlgebra
 using Test
 

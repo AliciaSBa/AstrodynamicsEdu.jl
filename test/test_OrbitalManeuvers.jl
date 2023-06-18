@@ -1,11 +1,13 @@
 # ORBITAL MANEUVERS TESTS
 
+#=
 using LinearAlgebra
-using AstrodynamicsEdu.LinearAlgebraTypes
-using AstrodynamicsEdu.IdealTwoBodyProblem
-using AstrodynamicsEdu.OrbitalManeuvers
-using AstrodynamicsEdu.AstroConstants
+include("linearAlgebraTypes.jl")
+include("idealTwoBodyProblem.jl")
+include("orbitalManeuvers.jl")
+inlcude("astroConstants.jl")
 using Test
+=#
 
 # Test the functions in the Orbital Maneuvers module
 

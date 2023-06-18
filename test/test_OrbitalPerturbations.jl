@@ -1,12 +1,14 @@
 # ORBITAL PERTURBATIONS TEST
 
+#=
 using LinearAlgebra
-using AstrodynamicsEdu.LinearAlgebraTypes
-using AstrodynamicsEdu.IdealTwoBodyProblem
-using AstrodynamicsEdu.OrbitalPerturbations
+include("linearAlgebraTypes.jl")
+include("idealTwoBodyProblem.jl")
+include("orbitalPerturbations.jl")
+inlcude("astroConstants.jl")
 using DifferentialEquations
-using AstrodynamicsEdu.AstroConstants
 using Test
+=#
 
 # Test the functions in the OrbitalPerturbations module
 

@@ -10,23 +10,17 @@ using Reexport
 using DelimitedFiles
 using RemoteFiles
 
-# INCLUDE SUBMODULES
-include("submodules/LinearAlgebraTypes.jl")
-@reexport using .LinearAlgebraTypes
+# INClUDE FILES
+include("linearAlgebraTypes.jl")
 
-include("submodules/IdealTwoBodyProblem.jl")
-@reexport using .IdealTwoBodyProblem
+include("idealTwoBodyProblem.jl")
 
-include("submodules/OrbitalPlots.jl")
-@reexport using .OrbitalPlots
+include("orbitalPlots.jl")
 
-include("submodules/AstroConstants.jl")
-@reexport using .AstroConstants
+include("astroConstants.jl")
 
-#include("submodules/OrbitalPerturbations.jl")
-#@reexport using .OrbitalPerturbations
+include("orbitalPerturbations.jl")
 
-include("submodules/OrbitalManeuvers.jl")
-@reexport using .OrbitalManeuvers
+include("orbitalManeuvers.jl")
 
 end

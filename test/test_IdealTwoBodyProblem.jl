@@ -1,9 +1,11 @@
 # IDEAL TWO BODY PROBLEM TESTS
 
+#=
 using LinearAlgebra
-using AstrodynamicsEdu.LinearAlgebraTypes
-using AStrodynamicsEdu.IdealTwoBodyProblem
+include("linearAlgebraTypes.jl")
+include("idealTwoBodyProblem.jl")
 using Test
+=#
 
 # Test MyStateVector constructor
 function test_MyStateVector()
@@ -231,7 +233,7 @@ function test_KeplerElliptic()
     tof2 = timeOfFlight(coe1,coeFinal,mu)
     @test tof2 == tof1
     time_theta1_thetaFinal = timeSinceTrueAnomaly(stateVector,mu,theta1,thetaFinal)
-    @test isapprox(time_theta1_thetaFinal, tof, rtol=1e-4, atol=1e-4) # s
+    @test isapprox(time_theta1_thetaFinal, tof2, rtol=1e-4, atol=1e-4) # s
 
     # Check the conversion between anomalies
     E = trueAnomaly_to_eccentricAnomaly(stateVector,mu,theta1)
