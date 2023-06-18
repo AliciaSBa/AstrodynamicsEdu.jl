@@ -5,7 +5,7 @@ module OrbitalPlots
 #include("AstroConstants.jl")
 using AstrodynamicsEdu.LinearAlgebraTypes
 using AstrodynamicsEdu.IdealTwoBodyProblem
-using AstrodynamicsEdu.AstroConstantss
+using AstrodynamicsEdu.AstroConstants
 using LinearAlgebra
 using Plots
 #using DifferentialEquations
