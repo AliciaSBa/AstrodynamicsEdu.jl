@@ -58,7 +58,7 @@ end
 
 
 # Establish an orbits propagator using the Cowell method
-function cowell(r0::Vector{Float64}, v0::Vector{Float64}, Bc::Float64, tvec::Vector, flag_drag::Bool, flag_J2::Bool)
+function cowell(r0, v0, bc, t, flag_drag, flag_J2)
     # Input:
     # r0: initial position vector in the inertial frame
     # v0: initial velocity vector in the inertial frame
@@ -71,61 +71,58 @@ function cowell(r0::Vector{Float64}, v0::Vector{Float64}, Bc::Float64, tvec::Vec
     # v: velocity vector in the inertial frame
 
     # Define the differential equation for orbit propagation
-    function propagate!(u,Bc,flag_drag,flag_J2)
-        r = u[1:3]
-        v = u[4:6]
-        r_norm = norm(r)
-
-        # Acceleration due to gravity (Keplerian motion)
-        a_gravity = -mu_Earth * r / r_norm^3
+    function propagate!(u, p)
+        # Extract the parameters
+        bc = p[1]
+        flag_drag = p[2]
+        flag_J2 = p[3]
     
-        # Perturbations
-        if flag_drag
-            # Acceleration due to drag
-            ap_drag = drag_acceleration(r_norm-R_Earth, v, Bc)
+        rr = u[1:3]
+        vv = u[4:6]
+        r = norm(rr)
+        zeta = norm(rr) - R_Earth
+    
+        # Check drag
+        if flag_drag==true
+            acc_drag = drag_acceleration(zeta, vv, bc)
         else
-            ap_drag = [0.0, 0.0, 0.0]
+            acc_drag = 0.0
         end
-        
-        if flag_J2
-            # Acceleration due to J2 perturbation
-            ap_J2 = J2_acceleration(r)
+    
+        # Check J2
+        if flag_J2==true
+            acc_J2 = J2_acceleration(rr)
         else
-            ap_J2 = [0.0, 0.0, 0.0]
+            acc_J2 = 0.0
         end
-
-        # Total acceleration
+    
+        # Compute RHS
         du = zeros(6)
-        du[1:3] = v
-        du[4:6] = a_gravity + ap_drag + ap_J2
+        du[1:3] = vv
+        du[4:6] = -mu_Earth / r^3 * rr .+ acc_drag .+ acc_J2
+        #println("du: ", du)
         return du
     end
 
-    # Define the initial state
-    u0 = [r0; v0]
-
-    # Define the parameters
-    parameters = [Bc, flag_drag, flag_J2]
-
-    #ode_fun!(du, u, p, t) = propagate!(u, Bc, flag_drag, flag_J2)
-    ode_fun!(u,p,t) = propagate!(u, Bc, flag_drag, flag_J2)
+    p = [bc, flag_drag, flag_J2]
 
     # Define the problem
-    #prob = ODEProblem(ode_fun!, u0, (0.0, t[end]))
+    odefun(u,p,t) = propagate!(u, p)
 
-    tspan = first(tvec), last(tvec)
-    prob = ODEProblem(ode_fun!, u0, tspan)
+    # Integration
+    u0 = [r0; v0]
+    tspan = (t[1], t[end])
+    prob = ODEProblem(odefun, u0, tspan, p)
+    sol = solve(prob, Tsit5(), reltol = 1e-9, abstol = 1e-9)
 
-    # Solve the problem
-    #sol = solve(prob, Tsit5(), saveat = tvec, abstol = 1e-9, reltol = 1e-9)
-    #sol = solve(prob,DP5(),abstol=1e-9,reltol=1e-9)
-    #sol = solve(prob,DP5(),saveat=tvec,abstol=1e-9,reltol=1e-9)
-    sol = solve(prob, Tsit5(), saveat = tvec)
-    
-    # Extract the solution
-    r = sol[1:3, :]
-    v = sol[4:6, :]
+    #r = permutedims(sol(t)[:, 1:3])
+    #v = permutedims(sol(t)[:, 4:6])
+
+    r = sol(t)[1:3,:]
+    v = sol(t)[4:6,:]
+
+    #println("r: ", r)
+    #println("v: ", v)
 
     return r, v
-
 end
