@@ -56,21 +56,7 @@ end
 
 # Calculate the perturbation acceleration due to the Third Body B
 
-
-# Establish an orbits propagator using the Cowell method
-function cowell(r0, v0, bc, t, flag_drag, flag_J2)
-    # Input:
-    # r0: initial position vector in the inertial frame
-    # v0: initial velocity vector in the inertial frame
-    # Bc: ballistic coefficient
-    # t: time vector
-    # flag_drag: Boolean that activates the drag perturbation when true
-    # flag_J2: Boolean that activates the J2 perturbation when true
-    # Output:
-    # r: position vector in the inertial frame
-    # v: velocity vector in the inertial frame
-
-    # Define the differential equation for orbit propagation
+# Define the differential equation for orbit propagation
     function propagate!(u, p)
         # Extract the parameters
         bc = p[1]
@@ -103,6 +89,19 @@ function cowell(r0, v0, bc, t, flag_drag, flag_J2)
         #println("du: ", du)
         return du
     end
+
+# Establish an orbits propagator using the Cowell method
+function cowell(r0, v0, bc, t, flag_drag, flag_J2)
+    # Input:
+    # r0: initial position vector in the inertial frame
+    # v0: initial velocity vector in the inertial frame
+    # Bc: ballistic coefficient
+    # t: time vector
+    # flag_drag: Boolean that activates the drag perturbation when true
+    # flag_J2: Boolean that activates the J2 perturbation when true
+    # Output:
+    # r: position vector in the inertial frame
+    # v: velocity vector in the inertial frame  
 
     p = [bc, flag_drag, flag_J2]
 
