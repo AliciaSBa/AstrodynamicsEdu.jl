@@ -5,7 +5,7 @@ include("idealTwoBodyProblem.jl")
 include("astroConstants.jl")
 using LinearAlgebra
 using DifferentialEquations
-#using OrdinaryDiffEq
+using OrdinaryDiffEq
 
 export J2_acceleration, drag_acceleration, cowell
 
