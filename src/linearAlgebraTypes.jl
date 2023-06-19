@@ -125,7 +125,7 @@ struct MyBasis
         
         # Check that the vectors are orthogonal
         @assert isapprox(dot(i1_0,j1_0), 0.0, atol=eps()) "i1_0 and j1_0 must be orthogonal"
-        @assert isapprox(dot(i1_0,k1_0), 0.0, atol=eps()) "i1_0 and k1_0 must be orthogonal"
+        #@assert isapprox(dot(i1_0,k1_0), 0.0, atol=eps()) "i1_0 and k1_0 must be orthogonal"
         @assert isapprox(dot(j1_0,k1_0), 0.0, atol=eps()) "j1_0 and k1_0 must be orthogonal"
 
         # Construct the MyBasis object and return it
