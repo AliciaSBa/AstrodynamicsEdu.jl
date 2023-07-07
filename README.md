@@ -2,7 +2,7 @@
 _Astrodynamics calculations and orbits visualization to solve Orbital Dynamics problems._
 
 [![Build Status](https://github.com/AliciaSBa/Astrodynamics.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/AliciaSBa/Astrodynamics.jl/actions/workflows/CI.yml?query=branch%3Amain)
-
+[![](https://img.shields.io/badge/docs-latest-blue.svg)](https://sisl.github.io/AstrodynamicsEdu.jl)
 
 <!-- TABLE OF CONTENTS -->
 <details>
