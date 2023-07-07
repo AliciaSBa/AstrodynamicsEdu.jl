@@ -1,16 +1,10 @@
 # make.jl file
 using Documenter
-push!(LOAD_PATH,"C:/Users/alici/.julia/dev/AstrodynamicsEdu/src")
+push!(LOAD_PATH, "C:/Users/alici/.julia/dev/AstrodynamicsEdu/src")
 using AstrodynamicsEdu
 
-makedocs(
-    name = "YourPackageName",
-    pages = [
-        "Home" => "index.md",
-        # Add more pages if needed
-    ],
-    format = Documenter.HTML()
-)
+#makedocs(sitename="AstrodynamicsEdu Documentation")
+
 
 makedocs(
     modules   = [AstrodynamicsEdu],  # Replace with the modules from your package
@@ -39,4 +33,6 @@ deploydocs(
     devbranch = "main",
     devurl = "latest",
 )
+
+
 
