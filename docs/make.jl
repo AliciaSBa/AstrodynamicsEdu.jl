@@ -19,7 +19,11 @@ makedocs(
         "Home" => "index.md",
         "Modules" => Any[
             "modules/linearAlgebraTypes.md",
-            "modules/idealTwoBodyProblem.md"
+            "modules/idealTwoBodyProblem.md",
+            "modules/astroConstants.md",
+            "modules/orbitalManeuvers.md",
+            "modules/orbitalPerturbations.md",
+            "modules/orbitalPlots.md"
         ],
         "Tutorials" => Any[
             "tutorials/example1.md",
