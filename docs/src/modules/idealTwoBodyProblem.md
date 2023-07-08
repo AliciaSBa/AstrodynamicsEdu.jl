@@ -8,7 +8,7 @@ Within the idealTwoBodyProblem.jl file, a range of functions has been developed 
 
 The figure below shows the two new data types defined in the ideal two-body problem file: MyStateVector and MyCOE. Below each appears their store objects and their type (indicated as `fieldName::Type`). These two data types are crucial for astrodynamics, as they allow to completely describe the motion of a body in space.
 
-![Alt text](I2BPTypes.png "Ideal Two-Body Problem Types Diagram")
+![Alt text](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/edit/main/docs/src/modules/I2BPTypes.png "Ideal Two-Body Problem Types Diagram")
 
 It is important to understand what each of these types entails and how to construct them:
 
@@ -95,7 +95,7 @@ However, in the code not only the specific cases are developed. We also incorpor
 
 To better understand all the possible directions of conversion between the different anomalies and time, the diagram below can be consulted.
 
-![Alt text](AnomaliesDiagram.png "Implemented directions of conversion between anomalies and time.")
+![Alt text](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/edit/main/docs/src/modules/AnomaliesDiagram.png "Implemented directions of conversion between anomalies and time.")
 
 Inside the file, the initial orbit determination is also tackled through the Lambert's problem. The functions written in this third table facilitate the determination of the time of flight, conic section parameters, and the solution of Lambert's problem itself.
 

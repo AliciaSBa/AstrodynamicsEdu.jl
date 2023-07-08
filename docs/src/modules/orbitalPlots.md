@@ -10,20 +10,20 @@ Because of the relevance and regularity of these reference frames, this module a
 
 The following examples showcase the visualization of orbits in the perifocal (PF) coordinate system, providing insights into the shape, size, and orientation of the orbits. 
 
-![Alt text](PFplotE.png "Elliptical orbit around Earth plotted in the perifocal plane")
-![Alt text](PFplotP.png "Parabolic orbit around Earth plotted in the perifocal plane")
-![Alt text](PFplotH.png "Hyperbolic orbit around Earth plotted in the perifocal plane")
+![Alt text](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/edit/main/docs/src/modules/PFplotE.png "Elliptical orbit around Earth plotted in the perifocal plane")
+![Alt text](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/edit/main/docs/src/modules/PFplotP.png "Parabolic orbit around Earth plotted in the perifocal plane")
+![Alt text](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/edit/main/docs/src/modules/PFplotH.png "Hyperbolic orbit around Earth plotted in the perifocal plane")
 
 Additionally, an example in the Earth-Centered Inertial (ECI) coordinate system is also presented in the following figure. It shows a satellite in a LEO (Low Earth Orbit) around Earth. This coordinate system is commonly used in space missions and satellite tracking.
 
-![Alt text](ECIplotE.png "Nearly circular orbit around Earth plotted in ECI reference frame")
+![Alt text](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/edit/main/docs/src/modules/ECIplotE.png "Nearly circular orbit around Earth plotted in ECI reference frame")
 
 These examples serve as valuable references for understanding the behavior and characteristics of various types of orbits. Whether it's a circular orbit, elliptical orbit, or more complex trajectories, the orbitalPlots.jl file empowers students to gain deeper insights into orbital dynamics through visually compelling representations.
 
-In the following table it can be seen the functions needed to do each plot, as well as the inputs required. There also appears a function to obtain a characteristic energy (C3) porkchop plot called `plot\_porkchop`, an example of its usage and how it looks is shown in the Example Problem 2.
+In the following table it can be seen the functions needed to do each plot, as well as the inputs required. There also appears a function to obtain a characteristic energy (C3) porkchop plot called `plot__porkchop`, an example of its usage and how it looks is shown in the Example Problem 2.
 
 | Function Name          | Inputs                                            | Functionality                                                                                               |
 |------------------------|---------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| plot_orbit_perifocal   | coe::MyCOE<br>planet_radius::Float64              | Plot the orbit around a planet and the position of the satellite on it in the perifocal plane (2D)        |
-| plot_orbit_ECI         | coe::MyCOE<br>planet_radius::Float64<br>mu::Float64 | Plot the orbit around a planet and the position of the satellite on it in the ECI frame (3D)              |
-| plot_porkchop          | t_launch::Vector [days]<br>t_travel::Vector [days]<br>pork_plot::Matrix [km^2/s^2]<br>t_synodic::Number [days] | Plot the C3 porkchop from a matrix of length(t_launch) x length(t_travel) containing the characteristic energy |
+| plot\_orbit\_perifocal   | coe::MyCOE<br>planet\_radius::Float64              | Plot the orbit around a planet and the position of the satellite on it in the perifocal plane (2D)        |
+| plot\_orbit\_ECI         | coe::MyCOE<br>planet\_radius::Float64<br>mu::Float64 | Plot the orbit around a planet and the position of the satellite on it in the ECI frame (3D)              |
+| plot\_porkchop          | t\_launch::Vector [days]<br>t_travel::Vector [days]<br>pork\_plot::Matrix [km^2/s^2]<br>t\_synodic::Number [days] | Plot the C3 porkchop from a matrix of length(t\_launch) x length(t\_travel) containing the characteristic energy |
