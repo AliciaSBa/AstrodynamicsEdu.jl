@@ -4,7 +4,7 @@ In order to be able to perform operations more at ease and to store information 
 
 The diagram below shows the five different types defined in the linear algebra module. Below each type, it can be seen the objects they store and the type of each of them (indicated as \textit{fieldName::Type}). To access the field value inside the object it is only necessary to write the name of the variable followed by the fieldName. For example, if 'B1' is MyBasis object and I want to access its angular velocity, I would just have to type 'B1.omega'.
 
-![Alt text for screen readers](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/edit/main/docs/src/modules/LinearAlgebraTypes.png "Linear Algebra Types Diagram")
+![Alt text for screen readers](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/tree/main/docs/src/modules/LinearAlgebraTypes.png "Linear Algebra Types Diagram")
 
 All these linear algebra types are related among each other, that is why it was so important to get the chain of dependency between them correctly. This is where **constructors** come in. The Julia language allows to have more than one way to build a type/struct. Thanks to this feature, the user can have a vector v₁ expressed in vector basis B₁, and if both v₁ and B₁ (which must be a MyBasis, this means, it must be expressed with respect to the Canonical Basis) are passed, v₁ can be turned into a MyVector. This means simply that v₁ is stored internally with the coordinates with respect to the Canonical Basis. So, now, we will examine which are the different available constructors for each of the types.
 
@@ -48,8 +48,8 @@ Both recipes and functions have been implemented to allow plotting MyBasis and M
 
 | Function call               | Recipe call  | Functionality                                                                                  |
 |-----------------------------|--------------|------------------------------------------------------------------------------------------------|
-| plot_MyBasis(B1)            | plot(B1)       | Plot the MyBasis object B1 in 3D using either the function or the recipe                       |
-| plot_MyReferenceFrame(RF1)  | plot(RF1)      | Plot the MyReferenceFrame object S1 in 3D using either the function or the recipe             |
+| plot\_MyBasis(B1)            | plot(B1)       | Plot the MyBasis object B1 in 3D using either the function or the recipe                       |
+| plot\_MyReferenceFrame(RF1)  | plot(RF1)      | Plot the MyReferenceFrame object S1 in 3D using either the function or the recipe             |
 
 
 In addition, some useful functions have also been created to assist in changing of
@@ -58,8 +58,8 @@ reference frame, rotating vector basis, and more.
 | Function Name            | Inputs                                                | Outputs                                      | Functionality                                                                                                |
 |--------------------------|-------------------------------------------------------|----------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | componentsInBasis        | v::MyVector<br>B1::MyBasis                            | v1::Vector                                   | Project a MyVector object onto a basis B₁                                                                      |
-| pos_vel_acc_inRF         | point::MyPoint<br>RF1::MyReferenceFrame               | pos1::Vector<br>veloc1::Vector<br>accel1::Vector | Obtain the position, velocity, and acceleration vectors of a MyPoint object in a different reference frame S₁ |
-| rotation_matrix          | basis::MyBasis                                        | R::Matrix                                    | Obtain the Rotation Matrix [₀R₁] of a MyBasis object B₁                                                        |
-| pure_rotation_MyBasis_x  | basis::MyBasis<br>theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the x-axis                                         |
-| pure_rotation_MyBasis_y  | basis::MyBasis<br>theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the y-axis                                         |
-| pure_rotation_MyBasis_z  | basis::MyBasis<br>theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the z-axis                                         |
+| pos\_vel\_acc\_inRF         | point::MyPoint<br>RF1::MyReferenceFrame               | pos1::Vector<br>veloc1::Vector<br>accel1::Vector | Obtain the position, velocity, and acceleration vectors of a MyPoint object in a different reference frame S₁ |
+| rotation\_matrix          | basis::MyBasis                                        | R::Matrix                                    | Obtain the Rotation Matrix [₀R₁] of a MyBasis object B₁                                                        |
+| pure\_rotation\_MyBasis\_x  | basis::MyBasis<br>theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the x-axis                                         |
+| pure\_rotation\_MyBasis\_y  | basis::MyBasis<br>theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the y-axis                                         |
+| pure\_rotation\_MyBasis\_z  | basis::MyBasis<br>theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the z-axis                                         |
