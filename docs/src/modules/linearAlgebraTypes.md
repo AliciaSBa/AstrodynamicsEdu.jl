@@ -4,7 +4,7 @@ In order to be able to perform operations more at ease and to store information 
 
 The diagram below shows the five different types defined in the linear algebra module. Below each type, it can be seen the objects they store and the type of each of them (indicated as \textit{fieldName::Type}). To access the field value inside the object it is only necessary to write the name of the variable followed by the fieldName. For example, if 'B1' is MyBasis object and I want to access its angular velocity, I would just have to type 'B1.omega'.
 
-![Alt text for screen readers](LinearAlgebraTypes.png "Linear Algebra Types Diagram")
+![Alt text for screen readers](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/edit/main/docs/src/modules/LinearAlgebraTypes.png "Linear Algebra Types Diagram")
 
 All these linear algebra types are related among each other, that is why it was so important to get the chain of dependency between them correctly. This is where **constructors** come in. The Julia language allows to have more than one way to build a type/struct. Thanks to this feature, the user can have a vector v₁ expressed in vector basis B₁, and if both v₁ and B₁ (which must be a MyBasis, this means, it must be expressed with respect to the Canonical Basis) are passed, v₁ can be turned into a MyVector. This means simply that v₁ is stored internally with the coordinates with respect to the Canonical Basis. So, now, we will examine which are the different available constructors for each of the types.
 
