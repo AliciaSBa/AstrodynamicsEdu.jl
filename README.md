@@ -1,4 +1,4 @@
-![AstrodynamicsEdu Logo](docs/assets/LogoAstrodynamicsEdu.png)
+![AstrodynamicsEdu Logo](docs/assets/LogoAstrodynamicsEdu.png | width=100)
 
 # AstrodynamicsEdu
 _The AstrodynamicsEdu.jl is an educational and user-friendly astrodynamics package implemented in Julia. It provides a comprehensive set of tools and algorithms for performing various calculations and simulations related to orbital mechanics, as well as, the visulization of orbits in both 2D and 3D. With AstrodynamicsEdu.jl, undergraduate students, researchers, and enthusiasts alike can gain a deeper understanding of Orbital Dynamics._
