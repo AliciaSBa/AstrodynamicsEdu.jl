@@ -27,6 +27,8 @@ makedocs(
         ],
         "Tutorials" => Any[
             "tutorials/example1.md",
+            "tutorials/example2.md",
+            "tutorials/example3.md"
         ],
         # Define your documentation pages here
     ]

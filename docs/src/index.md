@@ -8,15 +8,11 @@ AstrodynamicsEdu offers a wide range of features to facilitate learning and prob
 field of orbital dynamics. Let's take a closer look at the key features offered by this package:
 
 1. Solving Problems of the Ideal Two-Body Problem.
-2. Change of Reference Frame: AstrodynamicsEdu supports the transformation of orbital elements and 
-state vectors between different reference frames, including inertial frames, rotating frames, and 
-non-inertial frames.
+2. Change of Reference Frame: AstrodynamicsEdu supports the transformation of orbital elements and state vectors between different reference frames, including inertial frames, rotating frames, and non-inertial frames.
 3. Orbital Maneuvers and Delta-v Computation.
-4. Orbital Perturbations: AstrodynamicsEdu incorporates models for common perturbations, including 
-atmospheric drag and Earth's oblateness.
+4. Orbital Perturbations: AstrodynamicsEdu incorporates models for common perturbations, including atmospheric drag and Earth's oblateness.
 5. Orbit Visualization and Plotting.
-6. Educational Resources and Examples: To support the learning process, AstrodynamicsEdu provides a 
-collection of educational resources, sample problems, and examples.
+6. Educational Resources and Examples: To support the learning process, AstrodynamicsEdu provides a collection of educational resources, sample problems, and examples.
 
 We hope that AstrodynamicsEdu and this documentation empower you on your journey to mastering orbital 
 dynamics.
@@ -46,7 +42,7 @@ using AstrodynamicsEdu
 ## Package Structure
 The AstrodynamicsEdu package is composed by six different submodules, each designed to provide a 
 different set of capabilities related with Orbital Dynamics. The different functionalities and 
-details of each specific module can be found on its respective documentation page.
+details of each specific module can be found on its respective documentation page in the Modules section.
 ```@contents
 Pages = [
 "modules/linearAlgebraTypes.md",
@@ -59,7 +55,7 @@ Depth = 2
 To help you kick-start using the AstrodynamicsEdu package, a set of extensive orbital dynamics
 problems are provided as examples. These problems have been taken from the course of Space Vehicles 
 and Orbital Dynamics from University Carlos III of Madrid (uc3m). You can find the example 
-problems below:
+problems in the Tutorials section.
 
 ```@contents
 Pages = [
