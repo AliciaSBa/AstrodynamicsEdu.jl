@@ -23,8 +23,8 @@ These examples serve as valuable references for understanding the behavior and c
 
 In the following table it can be seen the functions needed to do each plot, as well as the inputs required. There also appears a function to obtain a characteristic energy (C3) porkchop plot called `plot_porkchop`, an example of its usage and how it looks is shown in the Example Problem 2.
 
-| Function Name          | Inputs                                            | Functionality                                                                                               |
+| **Function Name**          | **Inputs**                                            | **Functionality**                                                                                               |
 |------------------------|---------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| plot\_orbit\_perifocal   | coe::MyCOE<br>planet\_radius::Float64              | Plot the orbit around a planet and the position of the satellite on it in the perifocal plane (2D)        |
-| plot\_orbit\_ECI         | coe::MyCOE<br>planet\_radius::Float64<br>mu::Float64 | Plot the orbit around a planet and the position of the satellite on it in the ECI frame (3D)              |
-| plot\_porkchop          | t\_launch::Vector [days]<br>t_travel::Vector [days]<br>pork\_plot::Matrix [km^2/s^2]<br>t\_synodic::Number [days] | Plot the C3 porkchop from a matrix of length(t\_launch) x length(t\_travel) containing the characteristic energy |
+| plot\_orbit\_perifocal   | coe::MyCOE  planet\_radius::Float64              | Plot the orbit around a planet and the position of the satellite on it in the perifocal plane (2D)        |
+| plot\_orbit\_ECI         | coe::MyCOE  planet\_radius::Float64  mu::Float64 | Plot the orbit around a planet and the position of the satellite on it in the ECI frame (3D)              |
+| plot\_porkchop          | t\_launch::Vector [days]  t_travel::Vector [days]  pork\_plot::Matrix [km^2/s^2]  t\_synodic::Number [days] | Plot the C3 porkchop from a matrix of length(t\_launch) x length(t\_travel) containing the characteristic energy |

@@ -46,7 +46,7 @@ Some useful objects have been also predefined, so that the user can simply call 
 
 Both recipes and functions have been implemented to allow plotting MyBasis and MyReferenceFrame objects in 3D. The only difference in their usage is that for the recipes it is required to include again the Plots.jl package, by writing before:_using Plots_. The proper way to call this functions or recipes is addressed in the table below:
 
-| Function call               | Recipe call  | Functionality                                                                                  |
+| **Function call**               | **Recipe call**  | **Functionality**                                                                                 |
 |-----------------------------|--------------|------------------------------------------------------------------------------------------------|
 | plot\_MyBasis(B1)            | plot(B1)       | Plot the MyBasis object B1 in 3D using either the function or the recipe                       |
 | plot\_MyReferenceFrame(RF1)  | plot(RF1)      | Plot the MyReferenceFrame object S1 in 3D using either the function or the recipe             |
@@ -55,11 +55,11 @@ Both recipes and functions have been implemented to allow plotting MyBasis and M
 In addition, some useful functions have also been created to assist in changing of
 reference frame, rotating vector basis, and more. 
 
-| Function Name            | Inputs                                                | Outputs                                      | Functionality                                                                                                |
+| **Function Name**            | **Inputs**                                                | **Outputs**                                      | **Functionality**                                                                                                |
 |--------------------------|-------------------------------------------------------|----------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| componentsInBasis        | v::MyVector <br /> B1::MyBasis                            | v1::Vector                                   | Project a MyVector object onto a basis B₁                                                                      |
-| pos\_vel\_acc\_inRF         | point::MyPoint <br /> RF1::MyReferenceFrame               | pos1::Vector <br />veloc1::Vector <br> accel1::Vector | Obtain the position, velocity, and acceleration vectors of a MyPoint object in a different reference frame S₁ |
+| componentsInBasis        | v::MyVector  B1::MyBasis                            | v1::Vector                                   | Project a MyVector object onto a basis B₁                                                                      |
+| pos\_vel\_acc\_inRF         | point::MyPoint  RF1::MyReferenceFrame               | pos1::Vector  veloc1::Vector  accel1::Vector | Obtain the position, velocity, and acceleration vectors of a MyPoint object in a different reference frame S₁ |
 | rotation\_matrix          | basis::MyBasis                                        | R::Matrix                                    | Obtain the Rotation Matrix [₀R₁] of a MyBasis object B₁                                                        |
-| pure\_rotation\_MyBasis\_x  | basis::MyBasis <br /> theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the x-axis                                         |
-| pure\_rotation\_MyBasis\_y  | basis::MyBasis <br /> theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the y-axis                                         |
-| pure\_rotation\_MyBasis\_z  | basis::MyBasis <br /> theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the z-axis                                         |
+| pure\_rotation\_MyBasis\_x  | basis::MyBasis  theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the x-axis                                         |
+| pure\_rotation\_MyBasis\_y  | basis::MyBasis  theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the y-axis                                         |
+| pure\_rotation\_MyBasis\_z  | basis::MyBasis  theta::Number                       | rotB::MyBasis                               | Obtain the new MyBasis object after a pure rotation about the z-axis                                         |
