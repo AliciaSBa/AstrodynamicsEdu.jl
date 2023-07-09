@@ -25,6 +25,6 @@ In the following table it can be seen the functions needed to do each plot, as w
 
 | **Function Name**          | **Inputs**                                            | **Functionality**                                                                                               |
 |------------------------|---------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| plot\_orbit\_perifocal   | coe::MyCOE  planet\_radius::Float64              | Plot the orbit around a planet and the position of the satellite on it in the perifocal plane (2D)        |
-| plot\_orbit\_ECI         | coe::MyCOE  planet\_radius::Float64  mu::Float64 | Plot the orbit around a planet and the position of the satellite on it in the ECI frame (3D)              |
-| plot\_porkchop          | t\_launch::Vector [days]  t_travel::Vector [days]  pork\_plot::Matrix [km^2/s^2]  t\_synodic::Number [days] | Plot the C3 porkchop from a matrix of length(t\_launch) x length(t\_travel) containing the characteristic energy |
+| plot\_orbit\_perifocal   | coe::MyCOE,  planet\_radius::Float64              | Plot the orbit around a planet and the position of the satellite on it in the perifocal plane (2D)        |
+| plot\_orbit\_ECI         | coe::MyCOE,  planet\_radius::Float64,  mu::Float64 | Plot the orbit around a planet and the position of the satellite on it in the ECI frame (3D)              |
+| plot\_porkchop          | t\_launch::Vector [days],  t\_travel::Vector [days],  pork\_plot::Matrix [km^2/s^2],  t\_synodic::Number [days] | Plot the C3 porkchop from a matrix of length(t\_launch) x length(t\_travel) containing the characteristic energy |

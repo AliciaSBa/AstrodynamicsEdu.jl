@@ -34,12 +34,12 @@ This first table presents an overview of the functions available within the idea
 | trajectoryEquation | stateVector::MyStateVector, mu::Float64, theta::Float64 | trajectoryEquation::Float64 | Obtain `r` |
 | inclination | stateVector::MyStateVector | inc::Float64 | Obtain `i` |
 | semiMajorAxis | stateVector::MyStateVector, mu::Float64 | a::Float64 | Obtain `a` |
-| orbitType | stateVector::MyStateVector, mu::Float64 | orbitType::String | Obtain orbit type:  - Elliptic  - Hyperbolic  - Parabolic   - Circular |
+| orbitType | stateVector::MyStateVector, mu::Float64 | orbitType::String | Obtain orbit type: Elliptic, Hyperbolic, Parabolic, Circular |
 | trueAnomaly | stateVector::MyStateVector, mu::Float64 | theta::Float64 | Obtain `θ` [rad] |
 | stateVector\_to\_COE | stateVector::MyStateVector, mu::Float64 | coe::MyCOE | `(r, v) → COE` |
 | COE\_to\_stateVector | coe::MyCOE, mu::Float64 | stateVector::MyStateVector | `COE → (r, v)` |
 | escapeVelocity | r::MyVector, mu::Float64 | v\_esc::Float64 | Obtain `v_e` |
-| circularVelocity | 2 OPTIONS:  - r::MyVector, mu::Float64  - r\_norm::Float64, mu::Float64 | v\_circ::Float64 | Obtain `v_c` |
+| circularVelocity | 2 OPTIONS:  1.r::MyVector, mu::Float64  2.r\_norm::Float64, mu::Float64 | v\_circ::Float64 | Obtain `v_c` |
 | velocityPeriapsis | stateVector::MyStateVector, mu::Float64 | v_p::Float64 | Obtain `v_p` |
 | velocityApoapsis | stateVector::MyStateVector, mu::Float64 | v_a::Float64 | Obtain `v_a` |
 | velocityHyperbolicAsymptote | stateVector::MyStateVector, mu::Float64 | v_h::Float64 | Obtain `v_h` |
