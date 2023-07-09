@@ -1,8 +1,10 @@
+![AstrodynamicsEdu Logo](https://www.dropbox.com/s/avv0cej5t5ljp8e/LogoAstrodynamicsEdu.png?dl=0)
+
 # AstrodynamicsEdu
 _Astrodynamics calculations and orbits visualization to solve Orbital Dynamics problems._
 
 [![Build Status](https://github.com/AliciaSBa/Astrodynamics.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/AliciaSBa/Astrodynamics.jl/actions/workflows/CI.yml?query=branch%3Amain)
-[![](https://img.shields.io/badge/docs-latest-blue.svg)](https://aliciasba.github.io/AstrodynamicsEdu.jl/)
+[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://aliciasba.github.io/AstrodynamicsEdu.jl/)
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -28,7 +30,8 @@ _Astrodynamics calculations and orbits visualization to solve Orbital Dynamics p
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-There are multiple Astrodynamics libraries available for Julia; however, none of them are suitable to solve Orbital Dynamics problem in an academic setting. The aim of this library is to be accessible to students with a basic knowledge of programming and a wish to learn Orbital Dynamics in a dynamic and visual way.
+Nowadays, computational tools and libraries have become essential in solving Astrodynamics problems. However, there is a significant gap in the availability of educational resources and software libraries in Julia that specifically address Orbital Dynamics. The aim of this library is to develop an educational Astrodynamics library in Julia which is accessible to students with a basic knowledge of programming and a wish to learn Orbital Dynamics in a dynamic and visual way.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
