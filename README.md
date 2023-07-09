@@ -99,6 +99,6 @@ Some quick examples can be seen below!
   # Solve the I2BP 
   ```
 
-_For more examples, please see the [Package Documentation](https://example.com)_
+_For more examples, please see the [Package Documentation](https://aliciasba.github.io/AstrodynamicsEdu.jl/))_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
