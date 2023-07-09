@@ -1,4 +1,4 @@
-![AstrodynamicsEdu Logo](https://www.dropbox.com/s/avv0cej5t5ljp8e/LogoAstrodynamicsEdu.png?dl=0)
+![AstrodynamicsEdu Logo]([https://www.dropbox.com/s/avv0cej5t5ljp8e/LogoAstrodynamicsEdu.png?dl=0](https://www.dropbox.com/s/h2cu7xa3gi58qch/AnomaliesDiagram.png?dl=0))
 
 # AstrodynamicsEdu
 _Astrodynamics calculations and orbits visualization to solve Orbital Dynamics problems._
