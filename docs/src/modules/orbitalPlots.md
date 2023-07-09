@@ -10,13 +10,14 @@ Because of the relevance and regularity of these reference frames, this module a
 
 The following examples showcase the visualization of orbits in the perifocal (PF) coordinate system, providing insights into the shape, size, and orientation of the orbits. 
 
-![Alt text](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/tree/main/docs/src/modules/PFplotE.png "Elliptical orbit around Earth plotted in the perifocal plane")
-![Alt text](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/tree/main/docs/src/modules/PFplotP.png "Parabolic orbit around Earth plotted in the perifocal plane")
-![Alt text](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/tree/main/docs/src/modules/PFplotH.png "Hyperbolic orbit around Earth plotted in the perifocal plane")
+<img src="https://user-images.githubusercontent.com/115453770/252145648-41c6bdc4-0f6c-4f74-a0f5-28fb103ee045.png" alt="PFplotE" width="500px">
+<img src="https://user-images.githubusercontent.com/115453770/252145662-0bd3a9d6-ca44-44a9-a334-cd0974eae2a8.png" alt="PFplotP" width="500px">
+<img src="https://user-images.githubusercontent.com/115453770/252145661-eb68951a-56eb-43f5-8e64-484efaee26cb.png" alt="PFplotH" width="500px">
+
 
 Additionally, an example in the Earth-Centered Inertial (ECI) coordinate system is also presented in the following figure. It shows a satellite in a LEO (Low Earth Orbit) around Earth. This coordinate system is commonly used in space missions and satellite tracking.
 
-![Alt text](https://github.com/AliciaSBa/AstrodynamicsEdu.jl/tree/main/docs/src/modules/ECIplotE.png "Nearly circular orbit around Earth plotted in ECI reference frame")
+<img width="317" alt="ECIplotE" src="https://user-images.githubusercontent.com/115453770/252145671-1878ad27-0e1c-4335-9731-f7fa6baace5c.png">
 
 These examples serve as valuable references for understanding the behavior and characteristics of various types of orbits. Whether it's a circular orbit, elliptical orbit, or more complex trajectories, the orbitalPlots.jl file empowers students to gain deeper insights into orbital dynamics through visually compelling representations.
 
